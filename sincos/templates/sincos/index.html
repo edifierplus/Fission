@@ -1,0 +1,23 @@
+{% if latest_argument %}
+    <ul>
+    {% for p in latest_argument %}
+        <li><a href="{% url 'sincos:result' p.id %}">No.{{ p.id }} result</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No results are available.</p>
+{% endif %}
+
+<h1>Submit arguments</h1>
+<h2>{{ erer }}</h2>
+<form action="{% url 'sincos:calculate' %}" method="post">
+{% csrf_token %}
+<label for="111">A =</label>
+<input type="text" name="A" value="1.0" id="111" /><br />
+<label for="111">k =</label>
+<input type="text" name="k" value="1.0" id="222" /><br />
+<label for="111">phy =</label>
+<input type="text" name="phy" value="0.0" id="333" /><br />
+<br />
+<input type="submit" value="Submit!" />
+</form>
