@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Welcome to our final project</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/real/images/demo1.css" type="text/css" media="all" />
+<link rel="shortcut icon" href="/real/images/icon.png" >
+</head>
+
+<body>
+<p>
+    {% if latest_reactor %}
+    <ul class="result">
+        {% for p in latest_reactor %}
+        <li><a href="{% url 'real:show_result' p.id %}" class="result_reactor">No.{{ p.id }} reactor</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <ul class="result">
+        <li>No reactors existed.</li>
+    </ul>
+    {% endif %}
+</p>
+
+<p>
+    <h1>Final project for Nuclear Engineering</h1>
+    <br />
+    <h2>Submit parameters</h2>
+    <h3>{{ erer }}</h3>
+</p>
+
+<form class="form" action="{% url 'real:build_reactor' %}" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><label for="V">V(m<sup>3</sup>) =</label></td>
+            <td><input type="text" name="V" value="1.0" id="V" /></td>
+        </tr>
+        <tr>
+            <td><label for="N">N(10<sup>28</sup>m<sup>-3</sup>) =</label></td>
+            <td><input type="text" name="N" value="1.0" id="N" /></td>
+        </tr>
+        <tr>
+            <td><label for="element">ELEMENT =</label></td>
+            <td>
+                <select name="element" id="element">
+                    <option value="U-233">U-233</option>
+                    <option value="U-235" selected="selected">U-235</option>
+                    <option value="Pu-239">Pu-239</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <p class="submit">
+        <br />
+        <br />
+        <input type="submit" value="Creat reactor!" />
+    </p>
+</form>
+
+<p class="creators">
+    Programmed and designed by Jiyang Chu
+    <br />
+    Calculated and tested by Yishu Wang
+    <br />
+    &copy; 2013 Jiyang Chu and Yishu Wang
+    <br />
+
+</p>
+
+</body>

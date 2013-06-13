@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Reactor {{ reactor.id }} stage {{ nextsn }} result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/real/images/demo1.css" type="text/css" media="all" />
+<link rel="shortcut icon" href="/real/images/icon.png" >
+</head>
+
+<body id="atstage">
+<div id="stageall">
+<div id="stageleft">
+    <p>
+        <br />
+        <br />
+        <h2>Reactor No.{{ reactor.id }}</h2>
+    </p>
+
+    <table class="args" id="tab1">
+        <tr>
+            <td>V(m<sup>3</sup>) =</td>
+            <td>{{ reactor.V }}</td>
+        </tr>
+        <tr>
+            <td>N(10<sup>28</sup>m<sup>-3</sup>) =</td>
+            <td>{{ reactor.N }}</td>
+        </tr>
+        <tr>
+            <td>ELEMENT =</td>
+            <td>{{ reactor.element }}</td>
+        </tr>
+        <tr>
+            <td>&#947<sub>I</sub> =</td>
+            <td>{{ reactor.gamaI }}</td>
+        </tr>
+        <tr>
+            <td>&#947<sub>Xe</sub> =</td>
+            <td>{{ reactor.gamaXe }}</td>
+        </tr>
+        <tr>
+            <td>&#947<sub>Pm</sub> =</td>
+            <td>{{ reactor.gamaPm }}</td>
+        </tr>
+        <tr>
+            <td>&#963<sub>f</sub>(b) =</td>
+            <td>{{ reactor.sigmaf }}</td>
+        </tr>
+        <tr>
+            <td>&#963<sub>a</sub>(b) =</td>
+            <td>{{ reactor.sigmaa }}</td>
+        </tr>
+    </table>
+
+    <p>
+        <br />
+        <h2>Process</h2>
+    </p>
+
+    <table class="args" id="tab2">
+        <tr>
+            <td> </td>
+            <td>last stage</td>
+            <td>current stage</td>
+        </tr>
+        <tr>
+            <td>SN</td>
+            <td>{{ last_stage.sn }}</td>
+            <td>{{ next_stage.sn }}</td>
+        </tr>
+        <tr>
+            <td>power(MW)</td>
+            <td>{{ last_stage.power }}</td>
+            <td>{{ next_stage.power }}</td>
+        </tr>
+        <tr>
+            <td>&#934(10<sup>28</sup>m<sup>-2</sup>s<sup>-1</sup>)</td>
+            <td>{{ last_stage.phy }}</td>
+            <td>{{ next_stage.phy }}</td>
+        </tr>
+        <tr>
+            <td>N<sub>I</sub>(10<sup>28</sup>m<sup>-3</sup>)</td>
+            <td>{{ last_stage.dens_I }}</td>
+            <td>{{ next_stage.dens_I }}</td>
+        </tr>
+        <tr>
+            <td>N<sub>Xe</sub>(10<sup>28</sup>m<sup>-3</sup>)</td>
+            <td>{{ last_stage.dens_Xe }}</td>
+            <td>{{ next_stage.dens_Xe }}</td>
+        </tr>
+        <tr>
+            <td>N<sub>Pm</sub>(10<sup>28</sup>m<sup>-3</sup>)</td>
+            <td>{{ last_stage.dens_Pm }}</td>
+            <td>{{ next_stage.dens_Pm }}</td>
+        </tr>
+        <tr>
+            <td>N<sub>Sm</sub>(10<sup>28</sup>m<sup>-3</sup>)</td>
+            <td>{{ last_stage.dens_Sm }}</td>
+            <td>{{ next_stage.dens_Sm }}</td>
+        </tr>
+        <tr>
+            <td>time(h)</td>
+            <td></td>
+            <td>{{ next_stage.t }}</td>
+        </tr>
+    </table>
+
+    <p>
+        <br />
+        <h2>Next stage</h2>
+        <h3>{{ erer }}</h3>
+    </p>
+
+    <form class="form" action="{% url 'real:cal_stage' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="reactor_id" value="{{ reactor.id }}" id="reactor_id" />
+        <table  id="tab3">
+            <tr>
+                <td><label for="next_power">power(MW) =</label></td>
+                <td><input type="text" name="next_power" value="0.0" id="next_power" /></td>
+            </tr>
+            <tr>
+                <td><label for="next_time">time(h) =</label></td>
+                <td><input type="text" name="next_time" value="50.0" id="next_time" /></td>
+            </tr>
+            <tr>
+                <td><a href="{% url 'real:index' %}" class="button">Back!</a></td>
+                <td>
+                    <p class="submit">
+                        <input type="submit" value="Go next!" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="stageright">
+    <img src="/real/images/reactor{{ reactor.id }}_stage{{ next_stage.sn }}.png">
+</div>
+</div>
+</body>

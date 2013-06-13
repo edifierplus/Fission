@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Reactor {{ reactor.id }} result</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/real/images/demo1.css" type="text/css" media="all" />
+<link rel="shortcut icon" href="/real/images/icon.png" >
+</head>
+
+<body>
+
+<a href="{% url 'real:index' %}" class="button" id="fixright">Back!</a>
+
+<p>
+    <h2>Reactor {{ reactor.id }} parameters</h2>
+</p>
+
+<table class="args" id="tab1">
+    <tr>
+        <td>V(m<sup>3</sup>) =</td>
+        <td>{{ reactor.V }}</td>
+    </tr>
+    <tr>
+        <td>N(10<sup>28</sup>m<sup>-3</sup>) =</td>
+        <td>{{ reactor.N }}</td>
+    </tr>
+    <tr>
+        <td>ELEMENT =</td>
+        <td>{{ reactor.element }}</td>
+    </tr>
+    <tr>
+        <td>&#947<sub>I</sub> =</td>
+        <td>{{ reactor.gamaI }}</td>
+    </tr>
+    <tr>
+        <td>&#947<sub>Xe</sub> =</td>
+        <td>{{ reactor.gamaXe }}</td>
+    </tr>
+    <tr>
+        <td>&#947<sub>Pm</sub> =</td>
+        <td>{{ reactor.gamaPm }}</td>
+    </tr>
+    <tr>
+        <td>&#963<sub>f</sub>(b) =</td>
+        <td>{{ reactor.sigmaf }}</td>
+    </tr>
+    <tr>
+        <td>&#963<sub>a</sub>(b) =</td>
+        <td>{{ reactor.sigmaa }}</td>
+    </tr>
+</table>
+
+
+<p>
+    <h2>Processes</h2>
+</p>
+{% for p in stages %}
+<div class = "container">
+    <img src="/real/images/reactor{{ reactor.id }}_stage{{ p.sn }}.png">
+    <br /><br />
+    <table class="res">
+        <tr>
+            <td class="toleft">Stage No.{{ p.sn }}</td>
+            <td class="fixwidth">Power(MW) =</td>
+            <td >{{ p.power }}</td>
+            <td class="fixwidth">&#934(10<sup>28</sup>m<sup>-2</sup>s<sup>-1</sup>) =</td>
+            <td>{{ p.phy }}</td>
+        </tr>
+    </table>
+</div>
+{% endfor %}
+</body>

@@ -1,0 +1,198 @@
+body { 
+	padding:50px 100px; 
+	font:13px/150% Verdana, Tahoma, sans-serif; 
+	background: url('bg.png') right top no-repeat;
+	background-attachment: fixed;
+	}
+
+body#atstage {
+	padding-top:0px;
+	background: #FFFFFF;
+	}
+
+.creators {
+	padding-top:100px;
+	color: #AAAAAA;
+	}
+
+input, select { 
+	padding: 9px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+	width: 200px;
+	background: #FFFFFF;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	}
+
+select {
+	width:220px;
+}
+
+input:hover, input:focus,
+select:hover, select:focus { 
+	border-color: #A9A9A9; 
+	box-shadow: rgba(0,0,0, 0.2) 0px 0px 28px;
+	-moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 28px;
+	-webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 28px;
+	}
+
+table {
+	text-align: right;
+	}
+
+label { 
+	margin-left: 10px; 
+	color: #999999; 
+	font-weight: bold;
+	}
+
+.submit input {
+	width: auto;
+	padding: 9px 15px;
+	background: #617798;
+	border: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+.submit input:hover {
+ 	background: #407798;
+ 	box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	-moz-box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	-webkit-box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	}
+
+ .button {
+ 	width: auto;
+	padding: 9px 15px;
+	background: #617798;
+	border: 0;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFFFFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+.button:hover {
+	background: #407798;
+ 	box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	-moz-box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	-webkit-box-shadow: rgba(0,0,0, 0.3) 0px 0px 50px;
+	}
+
+#fixright {
+	position: fixed;
+	right: 60px;
+	top: 20px;
+	}
+
+h1, h2, h3 {
+	color: #617798;
+	}
+
+.result {
+	position: absolute;
+	right: 100px;
+	font-size: 16px;
+	width: 200px;
+	line-height: 2;
+	background: #FFFFFF;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 100%);
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	}
+
+.result li {
+	font-size: 16px;
+	font-weight: bold;
+	color: #617798;
+	}
+
+.result li:hover {
+	box-shadow: rgba(0,0,0, 0.3) 0px 0px 10px;
+	-moz-box-shadow: rgba(0,0,0, 0.3) 0px 0px 10px;
+	-webkit-box-shadow: rgba(0,0,0, 0.3) 0px 0px 10px;
+	}
+
+.result_reactor {
+	font-size: 16px;
+	font-weight: bold;
+	color: #617798;
+	text-decoration: none;
+}
+
+.args tr {
+	border: solid 2px #E5E5E5;
+	vertical-align: bottom;
+	color: #777777;
+	font:18px Cambria, Times, "Times New Roman", serif;
+	background: #FFFFFF;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 25px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 25px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 25px;
+	}
+
+table.res {
+	border: solid 1px #E5E5E5;
+	vertical-align: bottom;
+	color: #777777;
+	font:25px Cambria, Times, "Times New Roman", serif;
+	font-weight: bold;
+	background: #FFFFFF;
+	box-shadow: rgba(0,0,0, 0.5) 0px 0px 25px;
+	-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 25px;
+	-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 25px;
+	}
+
+#tab1, #tab2, #tab3 {
+	width: 350px;
+	}
+
+div.container {
+	padding-left:100px;
+	outline: solid;
+	outline-color: #CCCCCC;
+	height:1100px;
+	width:900px;
+	}
+
+td.toleft {
+	width: 120px;
+	text-align: left;
+	}
+
+td.fixwidth {
+	width: 250px;
+	}
+
+div#stageall {
+	width: 1200px;
+}
+
+div#stageleft {
+	height: 1200px;
+	width: 370px;
+	float: left;
+	}
+
+div#stageright {
+	height: 1200px;
+	width: 800px;
+	float: right;
+	}
